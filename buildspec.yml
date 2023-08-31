@@ -11,7 +11,7 @@ phases:
       - echo Build started on `date`
       - echo Compiling the Node.js code
       - npm audit fix
-      - npm run build
+      - ng build --prod
   post_build:
     commands:
       - echo Build completed on `date`
@@ -22,7 +22,4 @@ phases:
 artifacts:
   type: zip
   files:
-    - package.json
-    - package-lock.json
-    - "build/**/*"
-    - .ebextensions/**/*
+    - '**/*'
