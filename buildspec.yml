@@ -5,16 +5,12 @@ phases:
     runtime-versions:
       nodejs: 14.x
     commands:
-      - echo Installing Mocha...
       - npm install && npm install -g @angular/cli
-  pre_build:
-    commands:
-      - echo Installing source NPM dependencies...
   build:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      - npm run build
+      - npm run build:prod
   post_build:
     commands:
       - echo Build completed on `date`
